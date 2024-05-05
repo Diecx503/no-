@@ -1,0 +1,91 @@
+body {
+    background-color: #f5b9e6; /* Color rosa pastel */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #ff69b4; /* Rosa fuerte */
+    padding: 20px;
+    color: white;
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Para que esté detrás del contenido */
+    opacity: 0.6; /* Para que el fondo no sea demasiado llamativo */
+}
+
+.birthday-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+
+}
+
+.message {
+    font-size: 1.2em;
+    color: #333;
+    padding: 10px;
+}
+
+.countdown {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #c9769f; /* Rosa fuerte */
+}
+
+.footer {
+    background-color: #c9769f; 
+    padding: 10px;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+.special-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+        font-size: 1.5em;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .birthday-image {
+        margin: 10px 0;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    .countdown {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+}

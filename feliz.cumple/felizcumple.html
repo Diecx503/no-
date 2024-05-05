@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" type="text/css" href="todo/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="header">
+        <h1>🎈Feliz Cumpleaños Taty 🎈</h1>
+    </div>
+
+    <div class="content" id="content">
+        <img class="background-image" src="todo/atardecer.jpg" alt="Cielo" />
+
+        <p class="message">
+            ¡🎉Feliz 19 años, Taty🎈! Hoy es un día muy especial, deseo que tengas un día lleno de alegría, amor y diversión. 
+            Que este nuevo año te traiga muchas bendiciones y aventuras🍻. 
+        </p>
+
+        <div class="countdown">Cargando cuenta regresiva...</div>
+    </div>
+
+    <div class="footer">
+        © 2024 -Cumpleaños Genesis Tatiana 19
+    </div>
+    <script>
+        // Fecha para el martes 7 de mayo de 2024
+        const fechaCumpleanos = new Date("2024-05-07T08:00:00").getTime();
+
+        function actualizarCuentaRegresiva() {
+            const ahora = new Date().getTime();
+            const tiempoRestante = fechaCumpleanos - ahora;
+
+            if (tiempoRestante > 0) {
+                const dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
+
+                const countdownText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+                const countdownElement = document.getElementsByClassName("countdown")[0];
+                countdownElement.innerHTML = countdownText;
+            } else {
+                clearInterval(intervalo);
+
+                const contentElement = document.getElementById("content");
+                contentElement.innerHTML = `
+                    <h2>¡Feliz Cumpleaños, Taty!</h2>
+                    <p>🥳 Hola Taty,Quería desearte un cumpleaños increíble y espero que sea tan maravilloso como tú. Aunque no nos conocemos mucho siento que eres una buena persona y me encantaría conocerte más y saber más sobre ti.
+
+Que este día esté lleno de alegría, risas y momentos especiales.</p>
+<p> Espero que puedas encontrar la felicidad que mereces Animos!! </p>
+<p> ¡Feliz cumpleaños! 🌟🎁 </p>
+                    <img class="special-image" src="todo/cerveza2.jpeg" alt="Celebración de cumpleaños" />
+                    <br>
+                    <audio src="todo/Audio .mp3" controls autoplay loop></audio>
+            
+                `;
+            }
+        }
+
+        const intervalo = setInterval(actualizarCuentaRegresiva, 1000);
+    </script>
+</body>
+</html>
